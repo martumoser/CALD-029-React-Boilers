@@ -20,16 +20,7 @@ class Table extends Component {
                 </thead>
                 <tbody style={tBodyStyle} >
                     {this.props.boilers.map((boiler) => (
-                        <tr>
-                            <td>{boiler.id}</td>
-                            <td>{boiler.description}</td>
-                            <td>{boiler.boilerType}</td>
-                            <td>{boiler.building}</td>
-                            <td>{boiler.maintenancePeriod}</td>
-                            <td>{boiler.hourMaintenanceCost}</td>
-                            <td>{boiler.hourEventualCost}</td>
-                            <td><Item key={boiler.id} boiler={boiler} delItem={this.props.delItem}/></td>
-                        </tr>
+                    <Item key={boiler.id} boiler={boiler} delItem={this.props.delItem}/>
                     ))}
                 </tbody>
             </table>

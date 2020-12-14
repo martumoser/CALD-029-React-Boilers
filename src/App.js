@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddItem from './components/AddItem';
-import Header from './components/layout/header';
+import Header from './components/Header';
 import Table from './components/Table'
 import boilersData from './data/boilers'
 
