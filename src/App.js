@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AddItem from './components/AddItem';
-import Header from './components/Header';
-import Table from './components/Table'
+import AddItem from './components/AddItem/AddItem';
+import Header from './components/Header/Header';
+import Table from './components/Table/Table'
 import boilersData from './data/boilers'
 
 import './App.css';

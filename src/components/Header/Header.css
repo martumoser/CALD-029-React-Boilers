@@ -1,0 +1,19 @@
+header{
+    background-color: #fc6225;
+    color: #fff;
+    font-family: monospace;
+    letter-spacing: 1px;
+    text-align: left;
+    font-size: 25px;
+
+}
+.header{
+    border: 1px #555 solid;
+    padding: 10px 15px;
+    margin: 10px 10px;
+}
+
+
+
+
+

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import './Table.css'
 
 export class Item extends Component {
     render() {
         const {id} = this.props.boiler;
         return (
-                <tr>
+                <tr className='rows'>
                     <td>{this.props.boiler.id}</td>
                     <td>{this.props.boiler.description}</td>
                     <td>{this.props.boiler.boilerType}</td>

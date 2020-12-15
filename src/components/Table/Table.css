@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+table tr th {
+    text-align: center;
+    color: #fc6225;
+    font-size: 15px;
+    padding: 10px;
+    font-family: monospace;
+    width: 100%;
+}
+table tr td {
+    text-align: center;
+    font-size: 12px;
+    font-family: monospace;
+}
+.table{
+    margin: 10px 40px;
+    border: 1px red solid;
+    display: flex;
+}
+#cost2, #cost1, #building, #actions, #maintenance{
+    width: 30%;
+}
+#id, #boilertype{
+    width: 20%;
+}
+

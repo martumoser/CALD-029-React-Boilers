@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './AddItem.css';
 
 export class AddItem extends Component {
     state = {
@@ -36,13 +37,13 @@ export class AddItem extends Component {
     
     render() {
         return (
-            <div>
-                <h2>
-                    Add new Boiler
-                </h2>
-                
+            <div className='container'>
+                <div className='form-title'>
+                    <h2>
+                        Add new Boiler
+                    </h2>
+                </div>
                 <form onSubmit={this.onSubmit}>
-
                     <div>
                         <label>Description</label>
                         <input 
@@ -102,7 +103,6 @@ export class AddItem extends Component {
                             type='submit' 
                             value='Submit'
                             className='btn'
-                            style={{flex: '1'}}
                         />
                     </div>
                 </form>
