@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
   state = {
     boilers: boilersData
-  }
+  }             
 
   // Delete Item
   delItem = (id) => {
@@ -18,12 +18,27 @@ class App extends Component {
     });
   }
 
+  // Add New Item
+  addItem = ([description,boilerType, building, maintenancePeriod, hourMaintenanceCost, hourEventualCost]) => {
+    const newItem = {
+      id: Math.floor(Math.random() * 100),
+      description,
+      boilerType,
+      building,
+      maintenancePeriod,
+      hourMaintenanceCost,
+      hourEventualCost
+    }
+    this.setState({ boilers: [...this.state.boilers, newItem] });
+  }
+
+
   render() {
     return (
         <div className="App">
-            <Header />
-            <AddItem addItem={this.addItem} />
-            <Table boilers={this.state.boilers} delItem={this.delItem} />
+          <Header />
+          <Table boilers={this.state.boilers} delItem={this.delItem} />
+          <AddItem addItem={this.addItem} />
         </div>
     );
   }
