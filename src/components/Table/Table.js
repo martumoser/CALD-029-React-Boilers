@@ -22,7 +22,7 @@ class Table extends Component {
                     </thead>
                     <tbody>
                         {this.props.boilers.map((boiler) => (
-                        <Item key={boiler.id} boiler={boiler} delItem={this.props.delItem}/>
+                        <Item key={boiler.id} boiler={boiler} delItem={this.props.delItem} selectItem={this.props.selectItem} />
                         ))}
                     </tbody>
                 </table>

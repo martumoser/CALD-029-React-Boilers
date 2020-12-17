@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import './AddItem.css';
+import '../components/AddItem/AddItem.css';
 
-export class AddItem extends Component {
+export class EditItem extends Component {
     state = {
+        id: '',
         description: '',
         boilerType: '',
         building: '',
@@ -11,38 +12,39 @@ export class AddItem extends Component {
         hourEventualCost: '',
     }
 
+    componentDidUpdate (prevProps) { 
+        if (this.props.boiler !== prevProps.boiler) {
+            // console.log ('cambiaron las propiedades')
+            this.setState({
+                id: this.props.boiler.id,
+                description: this.props.boiler.description,
+                boilerType: this.props.boiler.boilerType,
+                building: this.props.boiler.building,
+                maintenancePeriod: this.props.boiler.maintenancePeriod,
+                hourMaintenanceCost: this.props.boiler.hourMaintenanceCost,
+                hourEventualCost: this.props.boiler.hourEventualCost
+            })
+        } 
+    }
+    
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addItem([
-            this.state.description, 
-            this.state.boilerType, 
-            this.state.building, 
-            this.state.maintenancePeriod, 
-            this.state.hourMaintenanceCost, 
-            this.state.hourEventualCost
-        ])
-        this.setState({
-            description: '',
-            boilerType: '',
-            building: '',
-            maintenancePeriod: '',
-            hourMaintenanceCost: '',
-            hourEventualCost: '',
-        });
+        console.log ('submit form', this.state)
+        this.props.updateItem(
+            this.state
+        )
     }
 
     onChange = (e) => this.setState({ 
         [e.target.name]: e.target.value
     });
     
-    
     render() {
-        console.log('Render ADD Item', this.state)
         return (
             <div className='container'>
                 <div className='form-title'>
                     <h2>
-                        Add new Boiler
+                        Edit Boiler
                     </h2>
                 </div>
                 <form onSubmit={this.onSubmit}>
@@ -113,4 +115,4 @@ export class AddItem extends Component {
     }
 }
 
-export default AddItem
+export default EditItem

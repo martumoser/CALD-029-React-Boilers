@@ -15,11 +15,11 @@ export class Item extends Component {
                     <td>{this.props.boiler.hourMaintenanceCost}</td>
                     <td>{this.props.boiler.hourEventualCost}</td>
                     <td>
-                        <button onClick={this.props.delItem.bind(this,id)} style={btnStyle} > 
+                        <button onClick={() =>this.props.delItem(id)} style={btnStyle} > 
                             X 
                         </button>
-                        <button > 
-                            EDIT
+                        <button onClick={() =>this.props.selectItem(id)} > 
+                            UPDATE
                         </button>
                     </td>
                 </tr>
